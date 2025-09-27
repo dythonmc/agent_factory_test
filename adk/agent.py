@@ -63,7 +63,7 @@ class Agent:
             # 4. Ejecutar cada detector para esta fuente
             for detector_class in self.detectors:
                 detector_instance = detector_class() # Creamos una instancia del detector
-                incidents = detector_instance.detect(cv_preparer, daily_files, last_weekday_files)
+                incidents = detector_instance.detect(self.execution_date, cv_preparer, daily_files, last_weekday_files)
 
                 if incidents:
                     print(f"  -> Detector '{detector_class.__name__}' encontró {len(incidents)} incidencia(s).")

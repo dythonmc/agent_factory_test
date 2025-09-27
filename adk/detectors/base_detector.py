@@ -8,7 +8,7 @@ class BaseDetector(ABC):
     """
 
     @abstractmethod
-    def detect(self, cv_preparer: CVPreparer, daily_files: list, last_weekday_files: list) -> list:
+    def detect(self, execution_date: str, cv_preparer: CVPreparer, daily_files: list, last_weekday_files: list) -> list:
         """
         Método principal que ejecuta la lógica de detección.
 
